@@ -9,10 +9,6 @@ on:
       - '**/**.ts'
       - '**/**.tc'
       - '**/**.gs'
-env:
-  REFRESH_TOKEN:
-  CLIENT_ID:
-  CLIENT_SECRET:
 
 jobs:
   deploy:
@@ -33,10 +29,8 @@ jobs:
 
       - name: push
         run: |
-          cd src
-          sudo clasp push --force
+          clasp push --force
 
       - name: deploy
         run: |
-          cd src
-          sudo clasp deploy
+          clasp deploy
